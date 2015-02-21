@@ -1,0 +1,28 @@
+[
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        8.663082,
+        50.117240
+      ]
+    },
+    "properties": {
+      "type": "Gymnasium",
+      "group": "school",
+      "name": "Bettinaschule",
+      "description": "Bettinaschule",
+      "street": "",
+      "postal": "",
+      "place": "",
+      "url": "",
+      "phone": "",
+      "fax": "",
+      "email": "",
+      "opening-hours": "",
+      "contact-person": "",
+      "office-hours": ""
+    }
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        8.692501,
+        50.114579
+      ]
+    },
+    "properties": {
+      "type": "u3",
+      "group": "nursery",
+      "name": "Kita Frankfurt",
+      "description": "Kita Frankfurt",
+      "street": "",
+      "postal": "",
+      "place": "",
+      "url": "",
+      "phone": "",
+      "fax": "",
+      "email": "",
+      "opening-hours": "",
+      "contact-person": "",
+      "office-hours": "",
+      "care-hours": "",
+      "facility-size": "",
+      "age-groups": "",
+      "focus": "",
+      "free-slots": ""
+    }
+  }
+]
