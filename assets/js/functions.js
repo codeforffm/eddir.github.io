@@ -53,8 +53,68 @@ function setSchoolLayer(layer) {
                 }));
                 break;
         }
+        var content = getSchoolContent(marker.feature);
+        marker.bindPopup(content, {
+            closeButton: false,
+            minWidth   : 350
+        });
     });
 
+}
+
+/**
+ * Get school content for the popup.
+ *
+ * @param feature
+ * @returns {string}
+ */
+function getSchoolContent(feature) {
+    var popupContent = '<div>' +
+        '<h3>' + feature.properties.name + '</h3></br>' +
+        addWithNewLine(outputRow('Schulform', feature.properties.type), '') +
+        addWithNewLine(outputRow('Beschreibung', feature.properties.description), '') +
+        addWithNewLine(outputRow('Adresse', feature.properties.street + ', ' + feature.properties.postal + ', ' + feature.properties.district), '</br>') +
+        '<strong>Kontaktinformationen: </strong></br>' +
+        addWithNewLine(outputRow('Kontaktperson', feature.properties.contact_person), '') +
+        addWithNewLine(outputRow('Telefon', feature.properties.phone), '') +
+        addWithNewLine(outputRow('Fax', feature.properties.fax), '') +
+        addWithNewLine(outputRow('Email-Adresse', feature.properties.email), '') +
+        addWithNewLine(outputRow('Webseite', feature.properties.url), '') +
+        addWithNewLine(outputRow('Öffnungszeiten', feature.properties.opening_hours), '') +
+        '</div>';
+    return popupContent;
+}
+
+/**
+ *  Output a row of the popup.
+ *
+ * @param label
+ * @param value
+ * @returns {string}
+ */
+function outputRow(label, value) {
+    if (value != '') {
+        return '<strong>' + label + ':</strong> ' + value;
+    }
+    else {
+        return '';
+    }
+}
+
+/**
+ * Add new line to a row of the popup.
+ *
+ * @param content
+ * @param oneRow
+ * @returns {string}
+ */
+function addWithNewLine(content, oneRow) {
+    if (oneRow != '') {
+        return content + '</br>' + oneRow;
+    }
+    else {
+        return content + '</br>';
+    }
 }
 
 /**

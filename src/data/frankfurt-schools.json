@@ -12,17 +12,18 @@
       "type": "Gymnasium",
       "group": "school",
       "name": "Bettinaschule",
-      "description": "Bettinaschule",
-      "street": "",
-      "postal": "",
-      "place": "",
-      "url": "",
-      "phone": "",
-      "fax": "",
-      "email": "",
-      "opening-hours": "",
-      "contact-person": "",
-      "office-hours": ""
+      "description": "Schule mit Ganztagsangeboten - Profil",
+      "street": "Feuerbachstraße 37-47",
+      "postal": "60325",
+      "place": "Frankfurt am Main",
+      "district": "Westend",
+      "url": "http://www.bettinaschule-frankfurt.de",
+      "phone": "+49 (0)69 212 33028",
+      "fax": "+49 (0)69 212 34975",
+      "email": "poststelle.bettinaschule@stadt-frankfurt.de",
+      "opening_hours": "08:00 Uhr bis  18:50 Uhr",
+      "contact_person": "Max Mustermann",
+      "office_hours": ""
     }
   }
 ]
