@@ -11,8 +11,39 @@
     "properties": {
       "type": "u3",
       "group": "nursery",
-      "name": "Kita Frankfurt",
-      "description": "Kita Frankfurt",
+      "name": "Kita Frankfurt u3",
+      "description": "Kita Frankfurt u3",
+      "street": "",
+      "postal": "",
+      "place": "",
+      "url": "",
+      "phone": "",
+      "fax": "",
+      "email": "",
+      "opening-hours": "",
+      "contact-person": "",
+      "office-hours": "",
+      "care-hours": "",
+      "facility-size": "",
+      "age-groups": "",
+      "focus": "",
+      "free-slots": ""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        8.681367,
+        50.127045
+      ]
+    },
+    "properties": {
+      "type": "u6",
+      "group": "nursery",
+      "name": "Kita Frankfurt u6",
+      "description": "Kita Frankfurt u6",
       "street": "",
       "postal": "",
       "place": "",

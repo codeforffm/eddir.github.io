@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
 
     <title>Schulen und KITAs in Frankfurt</title>
 
@@ -19,6 +19,15 @@
 </head>
 
 <body>
+<nav id="menu-ui" class="menu-ui">
+    <input id="search" class="search-ui" placeholder="Enter your search text"/>
+    <a href="#" class="active filter" id="filter-all" data-filter="all">Show all</a>
+    <a href="#" class="filter" id="filter-nurseries-all" data-filter="nursery-all">Nurseries</a>
+    <a href="#" class="filter sub-menu" id="filter-nurseries-u3" data-filter="nursery-u3">0-3 years</a>
+    <a href="#" class="filter sub-menu" id="filter-nurseries-u6" data-filter="nursery-u6">3-6 years</a>
+    <a href="#" class="filter sub-menu" id="filter-nurseries-o6" data-filter="nursery-o6">6+ years</a>
+    <a href="#" class="filter" id="filter-schools" data-filter="school">Schools</a>
+</nav>
 <div id="map"></div>
 <script src="assets/js/map.js"></script>
 </body>

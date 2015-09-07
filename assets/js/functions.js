@@ -8,6 +8,23 @@ var colorForIgs = '#5882FA';
 var colorForu3 = '#ff0000';
 var colorForu6 = '#ff4444';
 
+$(document).ready(function () {
+    $('.filter').click(function () {
+        setFilter($(this));
+    });
+    $('#search').click(function () {
+        var searchElement = $(this);
+        searchElement.keyup(function () {
+            if (searchElement.val().length >= 3) {
+                search(searchElement);
+            }
+            else {
+                showAll();
+            }
+        });
+    });
+});
+
 /**
  * Add the school pins to the map and set the color according to the school type.
  *
@@ -142,4 +159,102 @@ function setNurseryLayer(layer) {
                 break;
         }
     });
+}
+
+/**
+ * Set filter.
+ *
+ * @param filterElement
+ * @returns {boolean}
+ */
+function setFilter(filterElement) {
+    var filter = $(filterElement).attr('data-filter');
+
+    // remove/add active classes
+    $('.filter').removeClass("active");
+    $(filterElement).addClass("active");
+
+    // nurseries
+    if (filter.indexOf("nursery") > -1) {
+        switch (filter) {
+            case 'nursery-all':
+                nurseryLayer.setFilter(function (f) {
+                    return true;
+                });
+                break;
+            case 'nursery-u3':
+                nurseryLayer.setFilter(function (f) {
+                    return f.properties.type == 'u3';
+                });
+                break;
+            case 'nursery-u6':
+                nurseryLayer.setFilter(function (f) {
+                    return f.properties.type == 'u6';
+                });
+                break;
+            case 'nursery-o6':
+                nurseryLayer.setFilter(function (f) {
+                    return f.properties.type == 'o6';
+                });
+                break;
+        }
+        schoolLayer.setFilter(function (f) {
+        });
+        setNurseryLayer(nurseryLayer);
+    }
+    // schools
+    else if (filter.indexOf("school") > -1) {
+        switch (filter) {
+            case 'school':
+                schoolLayer.setFilter(function (f) {
+                    return true;
+                });
+                break;
+        }
+        nurseryLayer.setFilter(function (f) {
+        });
+        setSchoolLayer(schoolLayer);
+    }
+    // show all
+    else {
+        showAll();
+    }
+
+    return false;
+}
+
+/**
+ * Search
+ *
+ * @param searchElement
+ */
+function search(searchElement) {
+    var searchString = $(searchElement).val().toLowerCase();
+
+    nurseryLayer.setFilter(function (f) {
+        return f.properties.description
+                .toLowerCase()
+                .indexOf(searchString) !== -1;
+    });
+    schoolLayer.setFilter(function (f) {
+        return f.properties.description
+                .toLowerCase()
+                .indexOf(searchString) !== -1;
+    });
+    setSchoolLayer(schoolLayer);
+    setNurseryLayer(nurseryLayer);
+}
+
+/**
+ * SHow all layers.
+ */
+function showAll() {
+    nurseryLayer.setFilter(function (f) {
+        return true;
+    });
+    schoolLayer.setFilter(function (f) {
+        return true;
+    });
+    setSchoolLayer(schoolLayer);
+    setNurseryLayer(nurseryLayer);
 }
